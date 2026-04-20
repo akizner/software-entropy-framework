@@ -28,7 +28,10 @@ PS    = Production Signal  = commits x repos committed
 CS    = Catalyst Signal    = reviews x repos reviewed
 CD    = Catalyst Density   = inline comments / reviews
 SWR+I = (Sanctioned + Inherited) / Total PRs
+Mode  = SWR+I bands: DIRECTED >= 80%; MIXED = 50-79%; SELF-DIRECTED < 50%
 ```
+
+*Note: the `CS` line above reflects the bundled reference-tool output. The full framework formula adds cross-boundary weighting when repo ownership mapping exists.*
 
 This snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is likely accumulating.
 
@@ -52,9 +55,9 @@ For the full archetype catalog and longer interpretations, see `examples/archety
 
 The framework tells you where entropy is accumulating. The repair loops below are examples of how a governed organization might push memory, authority, and quality gates back into the work; they are not a single prescribed SDLC.
 
-- **Require PR templates that capture intent.** Make every meaningful change explain architectural intent, affected contracts, and whether any existing runbook or rule is now stale.
-- **Require Jira-linked work for every commit path.** If work ships without a ticket trail, you lose the authority chain that lets you distinguish sanctioned work from self-directed entropy.
-- **Add Human Codex gates to the SDLC.** Define who declares success, who bears the consequences, who curates the local context, and who is allowed to calibrate trust in agentic output.
+- **In many orgs, PR templates that capture intent help.** They can make each meaningful change explain architectural intent, affected contracts, and whether any runbook or rule is now stale.
+- **A Jira-based org may keep every commit path tied to a ticket trail.** That preserves the authority chain that helps distinguish sanctioned work from self-directed entropy.
+- **A governed team might add Human Codex gates to its SDLC.** For example, it can make explicit who declares success, who bears consequences, who curates local context, and who calibrates trust in agentic output.
 
 ```mermaid
 xychart-beta
