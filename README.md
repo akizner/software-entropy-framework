@@ -4,6 +4,78 @@
 
 ---
 
+> **TL;DR for Leadership**  
+> This framework measures **the rate at which your engineering organization accumulates hidden disorder** — not output volume.  
+> It converts Git + JIRA exhaust into two practical signals:  
+> • **Work provenance** — How much work is sanctioned vs. self-generated (SWR / SWR+I)  
+> • **Behavioral signature** — Who is producing, catalyzing, or governing (PS / CS / CD)  
+> Result: Early detection of the “metabolic plateau” before velocity collapses and repair capacity is overwhelmed.
+
+## What it measures:
+
+The framework combines two lenses:
+
+- **SWR / SWR+I** asks: is this person's work externally directed or self-generated?
+- **PS / CS / CD** asks: how do they behave inside the system once work arrives?
+
+```text
+========================================================================================
+ENTROPY FRAMEWORK — ORG HEALTH SNAPSHOT
+========================================================================================
+
+Engineer                  SWR+I   Work Mode       PS     CS    CD   Reads As
+----------------------------------------------------------------------------------------
+Developer A                92%    DIRECTED      5,220  8,330  1.14  System Governor
+Developer B                88%    DIRECTED        420  4,680  0.52  Selective Catalyst
+Developer C                41%    SELF-DIRECTED 3,780    144  0.33  Production Engine
+Developer D                27%    SELF-DIRECTED 2,940  1,560  0.28  High-Entropy Agent
+Developer E                76%    MIXED            24  1,040  0.89  Depleting Catalyst
+
+PS    = Production Signal  = commits x repos committed
+CS    = Catalyst Signal    = reviews x repos reviewed
+CD    = Catalyst Density   = inline comments / reviews
+SWR+I = (Sanctioned + Inherited) / Total PRs
+Mode  = SWR+I bands: DIRECTED >= 80%; MIXED = 50-79%; SELF-DIRECTED < 50%
+```
+
+*Note: the `CS` line above reflects the bundled reference-tool output. The full framework formula adds cross-boundary weighting when repo ownership mapping exists.*
+
+This snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is likely accumulating.
+
+### Why these labels appear
+
+**Archetype Decoder** (from tool output)  
+The combination of `PS`, `CS`, and `CD` produces recognizable organizational roles:
+
+| Archetype | Signature | Typical Risk / Value |
+| --- | --- | --- |
+| **System Governor** | High PS + High CS + High CD | Rare; protects long-term health |
+| **Selective Catalyst** | Low PS + High CS + Moderate CD | High leverage within domain |
+| **Production Engine** | High PS + Low CS | Builds volume; needs governance guardrails |
+| **High-Entropy Agent** | High PS + Low CD | High output, shallow reviews - entropy source |
+| **Depleting Catalyst** | Low PS + High CD | Deep reviews but low production |
+
+Full catalog and deeper interpretations -> [`examples/archetypes.md`](examples/archetypes.md)
+
+## Next Steps: Implementing Mitophagy
+
+The framework tells you where entropy is accumulating. The repair loops below are examples of how a governed organization might push memory, authority, and quality gates back into the work; they are not a single prescribed SDLC.
+
+- **In many orgs, PR templates that capture intent help.** They can make each meaningful change explain architectural intent, affected contracts, and whether any runbook or rule is now stale.
+- **A Jira-based org may keep every commit path tied to a ticket trail.** That preserves the authority chain that helps distinguish sanctioned work from self-directed entropy.
+- **A governed team might add Human Codex gates to its SDLC.** For example, it can make explicit who declares success, who bears consequences, who curates local context, and who calibrates trust in agentic output.
+
+```mermaid
+xychart-beta
+    title "The Metabolic Plateau"
+    x-axis [Early, Growth, Scale, Plateau, Strain, Break]
+    y-axis "Relative Level" 0 --> 100
+    line [68, 69, 69, 68, 66, 24]
+    line [8, 14, 24, 40, 68, 96]
+```
+
+**Interpretation**: The flatter line represents what leadership typically sees (velocity / output). The steadily rising line is the hidden entropy (technical debt, tribal knowledge, architectural drift) that eventually overwhelms repair mechanisms. The sharp break is the moment the metabolic plateau ends and visible failure begins. The goal of mitophagy is to keep the entropy line from ever reaching that inflection point.
+
 ## The Problem
 
 Every engineering organization measures output. Velocity. Story points. Throughput. PRs merged. These metrics tell you how much ATP the cell produced. They tell you nothing about the free radical damage accumulating underneath.
@@ -20,7 +92,7 @@ Not "how much are we producing?" but "how much disorder are we accumulating whil
 
 That's a different question. It leads to different metrics, different interventions, and a fundamentally different understanding of what engineering leadership is actually managing.
 
-The Entropy Framework answers this question by mapping engineering organizations onto biological thermodynamic systems — not as metaphor, but as measurement architecture. The mapping is rigorous: each biological primitive (mitochondria, free radicals, ATP recycling, mitophagy, DNA integrity, metabolic plateau) corresponds to a measurable organizational signal extracted from existing artifact data (Git, JIRA, PR reviews).
+The Entropy Framework answers this question by mapping engineering organizations onto biological thermodynamic systems — not as metaphor, but as measurement architecture. The mapping is rigorous. Each biological primitive (mitochondria, free radicals, ATP recycling, mitophagy, DNA integrity, metabolic plateau) corresponds to a measurable organizational signal extracted from existing artifact data (Git, JIRA, PR reviews).
 
 ## The Two Documents
 
