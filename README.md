@@ -4,24 +4,6 @@
 
 ---
 
-## The Problem
-
-Every engineering organization measures output. Velocity. Story points. Throughput. PRs merged. These metrics tell you how much ATP the cell produced. They tell you nothing about the free radical damage accumulating underneath.
-
-A cell can produce normal energy for decades while its conversion machinery silently degrades. Biologists call this the metabolic plateau: everything looks stable until accumulated damage overwhelms repair capacity. Then the system fails, and nobody can explain why.
-
-Engineering organizations have the same plateau. Sprints complete. Code ships. Velocity holds. Then one quarter it doesn't. The standard response is to pour in more energy — more engineers, more tools, more AI tokens. But fuel isn't the bottleneck. The conversion machinery is. Pouring more energy into degraded machinery produces more waste heat, not more work.
-
-## The Thesis
-
-**Stop measuring output. Start measuring the rate at which organizational order degrades.**
-
-Not "how much are we producing?" but "how much disorder are we accumulating while we produce?"
-
-That's a different question. It leads to different metrics, different interventions, and a fundamentally different understanding of what engineering leadership is actually managing.
-
-The Entropy Framework answers this question by mapping engineering organizations onto biological thermodynamic systems — not as metaphor, but as measurement architecture. The mapping is rigorous. Each biological primitive (mitochondria, free radicals, ATP recycling, mitophagy, DNA integrity, metabolic plateau) corresponds to a measurable organizational signal extracted from existing artifact data (Git, JIRA, PR reviews).
-
 ## What it measures:
 
 The framework combines two lenses:
@@ -48,6 +30,8 @@ CD    = Catalyst Density   = inline comments / reviews
 SWR+I = (Sanctioned + Inherited) / Total PRs
 ```
 
+This snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is likely accumulating.
+
 ### Why these labels appear
 
 - **Developer C -> Production Engine**  
@@ -64,11 +48,9 @@ SWR+I = (Sanctioned + Inherited) / Total PRs
 
 For the full archetype catalog and longer interpretations, see `examples/archetypes.md`.
 
-This snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is likely accumulating.
-
 ## Next Steps: Implementing Mitophagy
 
-The framework tells you where entropy is accumulating. Fixing it means adding repair loops that force organizational memory, authority, and quality gates back into the work.
+The framework tells you where entropy is accumulating. The repair loops below are examples of how a governed organization might push memory, authority, and quality gates back into the work; they are not a single prescribed SDLC.
 
 - **Require PR templates that capture intent.** Make every meaningful change explain architectural intent, affected contracts, and whether any existing runbook or rule is now stale.
 - **Require Jira-linked work for every commit path.** If work ships without a ticket trail, you lose the authority chain that lets you distinguish sanctioned work from self-directed entropy.
@@ -83,7 +65,26 @@ xychart-beta
     line [8, 14, 24, 40, 68, 96]
 ```
 
+The flatter line is visible velocity; the rising line is hidden entropy.
 Visible velocity can look stable long after hidden entropy starts compounding. By the time output falls, the damage has already accumulated.
+
+## The Problem
+
+Every engineering organization measures output. Velocity. Story points. Throughput. PRs merged. These metrics tell you how much ATP the cell produced. They tell you nothing about the free radical damage accumulating underneath.
+
+A cell can produce normal energy for decades while its conversion machinery silently degrades. Biologists call this the metabolic plateau: everything looks stable until accumulated damage overwhelms repair capacity. Then the system fails, and nobody can explain why.
+
+Engineering organizations have the same plateau. Sprints complete. Code ships. Velocity holds. Then one quarter it doesn't. The standard response is to pour in more energy — more engineers, more tools, more AI tokens. But fuel isn't the bottleneck. The conversion machinery is. Pouring more energy into degraded machinery produces more waste heat, not more work.
+
+## The Thesis
+
+**Stop measuring output. Start measuring the rate at which organizational order degrades.**
+
+Not "how much are we producing?" but "how much disorder are we accumulating while we produce?"
+
+That's a different question. It leads to different metrics, different interventions, and a fundamentally different understanding of what engineering leadership is actually managing.
+
+The Entropy Framework answers this question by mapping engineering organizations onto biological thermodynamic systems — not as metaphor, but as measurement architecture. The mapping is rigorous. Each biological primitive (mitochondria, free radicals, ATP recycling, mitophagy, DNA integrity, metabolic plateau) corresponds to a measurable organizational signal extracted from existing artifact data (Git, JIRA, PR reviews).
 
 ## The Two Documents
 
