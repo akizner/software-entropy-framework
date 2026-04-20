@@ -66,6 +66,25 @@ For the full archetype catalog and longer interpretations, see `examples/archety
 
 Seeing this snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is probably accumulating.
 
+## Next Steps: Implementing Mitophagy
+
+The framework tells you where entropy is accumulating. Fixing it means adding repair loops that force organizational memory, authority, and quality gates back into the work.
+
+- **Require PR templates that capture intent.** Make every meaningful change explain architectural intent, affected contracts, and whether any existing runbook or rule is now stale.
+- **Require Jira-linked work for every commit path.** If work ships without a ticket trail, you lose the authority chain that lets you distinguish sanctioned work from self-directed entropy.
+- **Add Human Codex gates to the SDLC.** Define who declares success, who bears the consequences, who curates the local context, and who is allowed to calibrate trust in agentic output.
+
+```mermaid
+xychart-beta
+    title "The Metabolic Plateau"
+    x-axis [Early, Growth, Scale, Plateau, Strain, Break]
+    y-axis "Relative Level" 0 --> 100
+    line [68, 69, 69, 68, 66, 24]
+    line [8, 14, 24, 40, 68, 96]
+```
+
+Visible velocity can look stable long after hidden entropy starts compounding. By the time output falls, the damage has already accumulated.
+
 ## The Two Documents
 
 This framework rests on two pillars that answer two different questions:
