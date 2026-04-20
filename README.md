@@ -22,6 +22,34 @@ That's a different question. It leads to different metrics, different interventi
 
 The Entropy Framework answers this question by mapping engineering organizations onto biological thermodynamic systems — not as metaphor, but as measurement architecture. The mapping is rigorous: each biological primitive (mitochondria, free radicals, ATP recycling, mitophagy, DNA integrity, metabolic plateau) corresponds to a measurable organizational signal extracted from existing artifact data (Git, JIRA, PR reviews).
 
+## What it measures:
+
+The framework combines two different lenses:
+
+- **SWR / SWR+I** asks: is this person's work externally directed or self-generated?
+- **PS / CS / CD** asks: how do they behave inside the system once work arrives?
+
+```text
+========================================================================================
+ENTROPY FRAMEWORK — ORG HEALTH SNAPSHOT
+========================================================================================
+
+Engineer                  SWR+I   Work Mode       PS     CS    CD   Reads As
+----------------------------------------------------------------------------------------
+Developer A                92%    DIRECTED      5,220  8,330  1.14  System Governor
+Developer B                88%    DIRECTED        420  4,680  0.52  Selective Catalyst
+Developer C                41%    SELF-DIRECTED 3,780    144  0.33  Production Engine
+Developer D                27%    SELF-DIRECTED 2,940  1,560  0.28  High-Entropy Agent
+Developer E                76%    MIXED            24  1,040  0.89  Depleting Catalyst
+
+PS    = Production Signal  = commits x repos committed
+CS    = Catalyst Signal    = reviews x repos reviewed
+CD    = Catalyst Density   = inline comments / reviews
+SWR+I = (Sanctioned + Inherited) / Total PRs
+```
+
+Seeing this snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is probably accumulating.
+
 ## The Two Documents
 
 This framework rests on two pillars that answer two different questions:
