@@ -20,11 +20,11 @@ Not "how much are we producing?" but "how much disorder are we accumulating whil
 
 That's a different question. It leads to different metrics, different interventions, and a fundamentally different understanding of what engineering leadership is actually managing.
 
-The Entropy Framework answers this question by mapping engineering organizations onto biological thermodynamic systems — not as metaphor, but as measurement architecture. The mapping is rigorous: each biological primitive (mitochondria, free radicals, ATP recycling, mitophagy, DNA integrity, metabolic plateau) corresponds to a measurable organizational signal extracted from existing artifact data (Git, JIRA, PR reviews).
+The Entropy Framework answers this question by mapping engineering organizations onto biological thermodynamic systems — not as metaphor, but as measurement architecture. The mapping is rigorous. Each biological primitive (mitochondria, free radicals, ATP recycling, mitophagy, DNA integrity, metabolic plateau) corresponds to a measurable organizational signal extracted from existing artifact data (Git, JIRA, PR reviews).
 
 ## What it measures:
 
-The framework combines two different lenses:
+The framework combines two lenses:
 
 - **SWR / SWR+I** asks: is this person's work externally directed or self-generated?
 - **PS / CS / CD** asks: how do they behave inside the system once work arrives?
@@ -51,20 +51,20 @@ SWR+I = (Sanctioned + Inherited) / Total PRs
 ### Why these labels appear
 
 - **Developer C -> Production Engine**  
-  `PS` is high, but `CS` is low. This person produces a lot of code across many repos, but exerts little review or governance influence on the rest of the system.
+  `PS` is high, but `CS` is low. This person produces a lot of code across many repos, but shows little review or governance influence in this snapshot.
 
 - **Developer D -> High-Entropy Agent**  
   `PS` and `CS` both look strong at first glance, but `CD` is low. The volume is there; the review depth is not. That means a lot of activity with shallow catalytic effect, which is exactly the pattern the framework flags as entropy-producing.
 
 - **Developer E -> Depleting Catalyst**  
-  `PS` is almost gone, while `CS` stays high and `CD` stays substantive. This person is still acting as a real quality gate, but their own production has collapsed.
+  `PS` is almost gone, while `CS` stays high and `CD` stays substantive. This person is still acting as a real quality gate, but their own production is now minimal.
 
 - **Developer A -> System Governor**  
   High `PS`, high `CS`, high `CD`. This is the rare profile that both ships and governs.
 
 For the full archetype catalog and longer interpretations, see `examples/archetypes.md`.
 
-Seeing this snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is probably accumulating.
+This snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is likely accumulating.
 
 ## Next Steps: Implementing Mitophagy
 
