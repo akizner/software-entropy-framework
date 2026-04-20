@@ -48,6 +48,22 @@ CD    = Catalyst Density   = inline comments / reviews
 SWR+I = (Sanctioned + Inherited) / Total PRs
 ```
 
+### Why these labels appear
+
+- **Developer C -> Production Engine**  
+  `PS` is high, but `CS` is low. This person produces a lot of code across many repos, but exerts little review or governance influence on the rest of the system.
+
+- **Developer D -> High-Entropy Agent**  
+  `PS` and `CS` both look strong at first glance, but `CD` is low. The volume is there; the review depth is not. That means a lot of activity with shallow catalytic effect, which is exactly the pattern the framework flags as entropy-producing.
+
+- **Developer E -> Depleting Catalyst**  
+  `PS` is almost gone, while `CS` stays high and `CD` stays substantive. This person is still acting as a real quality gate, but their own production has collapsed.
+
+- **Developer A -> System Governor**  
+  High `PS`, high `CS`, high `CD`. This is the rare profile that both ships and governs.
+
+For the full archetype catalog and longer interpretations, see `examples/archetypes.md`.
+
 Seeing this snapshot answers the first question immediately: who is shipping, who is governing quality, who is self-directing work, and where entropy is probably accumulating.
 
 ## The Two Documents
