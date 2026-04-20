@@ -4,6 +4,13 @@
 
 ---
 
+> **TL;DR for Leadership**  
+> This framework measures **the rate at which your engineering organization accumulates hidden disorder** — not output volume.  
+> It converts Git + JIRA exhaust into two practical signals:  
+> • **Work provenance** — How much work is sanctioned vs. self-generated (SWR / SWR+I)  
+> • **Behavioral signature** — Who is producing, catalyzing, or governing (PS / CS / CD)  
+> Result: Early detection of the “metabolic plateau” before velocity collapses and repair capacity is overwhelmed.
+
 ## What it measures:
 
 The framework combines two lenses:
@@ -37,19 +44,18 @@ This snapshot answers the first question immediately: who is shipping, who is go
 
 ### Why these labels appear
 
-- **Developer C -> Production Engine**  
-  `PS` is high, but `CS` is low. This person produces a lot of code across many repos, but shows little review or governance influence in this snapshot.
+**Archetype Decoder** (from tool output)  
+The combination of `PS`, `CS`, and `CD` produces recognizable organizational roles:
 
-- **Developer D -> High-Entropy Agent**  
-  `PS` and `CS` both look strong at first glance, but `CD` is low. The volume is there; the review depth is not. That means a lot of activity with shallow catalytic effect, which is exactly the pattern the framework flags as entropy-producing.
+| Archetype | Signature | Typical Risk / Value |
+| --- | --- | --- |
+| **System Governor** | High PS + High CS + High CD | Rare; protects long-term health |
+| **Selective Catalyst** | Low PS + High CS + Moderate CD | High leverage within domain |
+| **Production Engine** | High PS + Low CS | Builds volume; needs governance guardrails |
+| **High-Entropy Agent** | High PS + Low CD | High output, shallow reviews - entropy source |
+| **Depleting Catalyst** | Low PS + High CD | Deep reviews but low production |
 
-- **Developer E -> Depleting Catalyst**  
-  `PS` is almost gone, while `CS` stays high and `CD` stays substantive. This person is still acting as a real quality gate, but their own production is now minimal.
-
-- **Developer A -> System Governor**  
-  High `PS`, high `CS`, high `CD`. This is the rare profile that both ships and governs.
-
-For the full archetype catalog and longer interpretations, see `examples/archetypes.md`.
+Full catalog and deeper interpretations -> [`examples/archetypes.md`](examples/archetypes.md)
 
 ## Next Steps: Implementing Mitophagy
 
@@ -68,8 +74,7 @@ xychart-beta
     line [8, 14, 24, 40, 68, 96]
 ```
 
-The flatter line is visible velocity; the rising line is hidden entropy.
-Visible velocity can look stable long after hidden entropy starts compounding. By the time output falls, the damage has already accumulated.
+**Interpretation**: The flatter line represents what leadership typically sees (velocity / output). The steadily rising line is the hidden entropy (technical debt, tribal knowledge, architectural drift) that eventually overwhelms repair mechanisms. The sharp break is the moment the metabolic plateau ends and visible failure begins. The goal of mitophagy is to keep the entropy line from ever reaching that inflection point.
 
 ## The Problem
 
