@@ -45,7 +45,17 @@
     margin: 0 auto;
     padding: 4.5rem 1.5rem 3rem;
   }
-  header.hero { margin-bottom: 3.5rem; }
+  header.hero { margin-bottom: 2rem; }
+  .context {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.92rem;
+    color: var(--muted);
+    background: var(--card);
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+    margin: 0 0 3rem;
+    line-height: 1.55;
+  }
   .kicker {
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 0.78rem;
@@ -131,10 +141,12 @@
 <main>
 
 <header class="hero">
-  <p class="kicker">A lens for software delivery</p>
+  <p class="kicker">A lens from the Software Entropy Framework</p>
   <h1>Unrealized Knowledge</h1>
   <p class="dek">The cost of not-yet-knowing — and why, now that code is cheap, it is the whole game.</p>
 </header>
+
+<p class="context">This page introduces one lens from the <a href="https://github.com/akizner/software-entropy-framework">Software Entropy Framework</a> — a project about measuring how engineering organizations accumulate and repair disorder. The framework measures the health of the system from its artifacts; this lens asks where the knowledge that keeps it healthy gets extracted. You don't need the framework to use the lens. A map into the rest sits at the <a href="#map">end of the page</a>.</p>
 
 <h2>What just changed</h2>
 
@@ -146,7 +158,7 @@
 
 <h2>A name for the gap</h2>
 
-<p><strong>Unrealized Knowledge (URK)</strong> is everything a finished system will eventually have forced you to know that you have not yet captured. Not knowledge that's missing from the universe — knowledge that exists somewhere (in a stakeholder's head, in production behavior, in what a legacy API actually does as opposed to what its documentation says) but has not yet been extracted into a form anyone can build against.</p>
+<p><strong>Unrealized Knowledge (URK)</strong> is everything a finished system will eventually have forced you to know that you have not yet captured. Most of it already exists somewhere — in a stakeholder's head, in production behavior, in what a legacy API actually does as opposed to what its documentation says — and merely hasn't been extracted into a form anyone can build against. The rest doesn't exist anywhere yet: it comes into being only on contact with the real system. Both kinds are owed before delivery; they differ in how early they <em>can</em> be collected, and that difference will matter later.</p>
 
 <p>It comes in two kinds, and they behave differently:</p>
 
@@ -268,7 +280,7 @@
 
 <p>The two curves don't behave the same way, and the difference matters.</p>
 
-<p>Business URK should fall early and stay down. If nobody can articulate what success looks like by the time design starts, everything downstream is speculation with a schedule attached.</p>
+<p>Business URK should fall early and stay down. In practice it spikes too — user research reframes who this is for, a pivot redefines what "done" means. The asymmetry between the curves is one of degree, not kind: a healthy cycle forces the business spikes toward the beginning, where they cost a rewritten document rather than a rewritten system. If nobody can articulate what success looks like by the time design starts, everything downstream is speculation with a schedule attached.</p>
 
 <p>Tech URK falls <em>non-monotonically</em>. It spikes. A clarifying question surfaces a dependency nobody mentioned. A design review reveals the architecture doesn't permit the easy path. Implementation discovers what the documentation lied about. These spikes are not failures of the process — they are the moments discovery actually happens. The spike was always there, latent; the process just made it visible. The only real question is <em>when you can afford to have it</em>. A spike during design costs a conversation. The same spike during a production rollout costs an incident.</p>
 
@@ -294,7 +306,9 @@
 
 <p>All of our verification machinery — tests, reviews, type systems, CI — verifies downstream of intent. It can tell you the system does what the specification says. It is structurally silent on whether the specification captured what mattered. That silence was tolerable when writing code was the dominant cost, because the specification got years of forced contact with reality as humans slowly built against it. When implementation compresses from months to hours, that contact disappears, and specification error ships at machine speed.</p>
 
-<p>So the lens suggests measuring processes by a different question. Not "how much did this phase produce?" but: <strong>how much Unrealized Knowledge did this phase extract, on which axis, and could it have been extracted earlier at reasonable cost?</strong> A requirements document that surfaces a fatal constraint is worth more than one that's merely complete. A design review that triggers a spike did its job precisely <em>because</em> it hurt. A sprint that ships nothing but eliminates a wrong path may be the most productive week of the quarter — and output metrics will record it as zero.</p>
+<p>So the lens suggests measuring processes by a different question. Not "how much did this phase produce?" but: <strong>how much Unrealized Knowledge did this phase extract, on which axis, and could it have been extracted earlier at reasonable cost?</strong> Extraction leaves observable traces, even without instrumentation: a decision closed, a constraint surfaced, a wrong path killed, an assumption converted into a testable claim. Count those. A requirements document that surfaces a fatal constraint is worth more than one that's merely complete. A design review that triggers a spike did its job precisely <em>because</em> it hurt. A sprint that ships nothing but eliminates a wrong path may be the most productive week of the quarter — and output metrics will record it as zero.</p>
+
+<p>One concrete moment, because the lens is easiest to see in miniature. A team reviewing a payments cutover asks the integration owner a single question — <em>what happens to in-flight transactions during the switch?</em> — and nobody knows. That silence is a Tech URK spike, collected in a meeting for the price of an awkward minute. Left unasked, the same unknown surfaces during migration, as an incident. Same knowledge, same debt; the only variable was when it got collected. And notice what the phase's official output recorded: a sign-off document, which would have looked identical either way. The lens counts the question. The output metric counted the document.</p>
 
 <h2>A lens, not a methodology</h2>
 
@@ -302,8 +316,15 @@
 
 <p>Ask it a few times and the shape of your own delivery cycle becomes visible — where knowledge actually gets extracted, where it merely gets scheduled for later, and where the spikes are quietly waiting for the most expensive possible moment to appear.</p>
 
-<footer>
-  <p>Part of the <a href="https://github.com/akizner/software-entropy-framework">Software Entropy Framework</a> — a broader project on measuring how engineering organizations accumulate and repair disorder.</p>
+<footer id="map">
+  <p><strong>Where this sits.</strong> The Software Entropy Framework measures how engineering organizations accumulate and repair disorder, read from Git and Jira exhaust. Unrealized Knowledge is its delivery-cycle lens — the same concern, viewed from the front of the cycle instead of the back. To go deeper:</p>
+  <p>
+    <a href="https://github.com/akizner/software-entropy-framework">Framework overview (README)</a> ·
+    <a href="https://github.com/akizner/software-entropy-framework/blob/main/HUMAN-CODEX.md">The Human Codex</a> ·
+    <a href="https://github.com/akizner/software-entropy-framework/blob/main/framework/thermodynamic-model.md">Thermodynamic model</a> ·
+    <a href="https://github.com/akizner/software-entropy-framework/blob/main/framework/metrics.md">Metrics &amp; archetypes</a> ·
+    <a href="https://github.com/akizner/software-entropy-framework/tree/main/tools">Extraction tools</a>
+  </p>
   <p>Arkadi Kizner · CC-BY-SA 4.0</p>
 </footer>
 
